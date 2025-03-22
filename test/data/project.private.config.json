@@ -1,0 +1,9 @@
+{
+  "projectname": "test",
+  "description": "测试文件",
+  "condition": {
+    "miniprogram": {
+      "list": [{ "name": "home", "pathName": "pages/home" }]
+    }
+  }
+}
