@@ -2,6 +2,16 @@
 
 基于 uni-app 项目文件系统的微信小程序`project.private.config.json`文件生成插件。
 
+## 安装
+
+```bash
+pnpm install -D vite-plugin-uni-wx-project
+```
+
+
+## 使用
+
+> 注意：此插件只在 vite 启动时执行一次，所以如果有更新需重启vite。
 
 ```ts
 import { defineConfig } from 'vite'
@@ -31,12 +41,30 @@ export default defineConfig(() => {
 </template>
 ```
 
-插件会分析项目中所有`.vue`文件中的`<project-private></project-private>`标签数据，然后更新微信小程序开发工具需要的`project.private.config.json`文件。
+插件会分析项目中所有`.vue`文件中的`<project-private></project-private>`标签数据，然后更新微信小程序开发工具需要的`./src/project.private.config.json`文件。
+
+```json
+{
+  "condition": {
+    "miniprogram": {
+      "list": [
+        { "name": "登录",
+          "pathName": "pages/login/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
+
+```
 
 UniWxProject 方法的入参
 
 - `dir`: `project.private.config.json`文件所在目录。构建后只更新文件中`condition.miniprogram.list`的内容。
-- `blockLang`: project-private 中数据类型，'json5' | 'json' | 'yaml' | 'yml'
+- `lang`: project-private 中数据类型，'json5' | 'json' | 'yaml' | 'yml'
 
 
 ## project-private 格式
@@ -82,5 +110,3 @@ interface ProjectMini {
 ]
 </project-private>
 ```
-
-> 注意：此插件只在 vite 启动时执行一次，所以如果有更新需重新启动。

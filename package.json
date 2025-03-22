@@ -28,9 +28,7 @@
   "scripts": {
     "build": "unbuild",
     "stub": "unbuild --stub",
-    "test": "vitest run --coverage",
-    "test:html": "vitest run --coverage",
-    "prepublishOnly": "pnpm build"
+    "test": "vitest run --coverage"
   },
   "peerDependencies": {
     "vite": "^5.0.0"

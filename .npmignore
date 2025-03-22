@@ -1,0 +1,10 @@
+.zed/
+coverage/
+node_modules/
+src/
+test/
+.gitignore
+build.config.ts
+pnpm-lock.yaml
+tsconfig.json
+vitest.config.ts
