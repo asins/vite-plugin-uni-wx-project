@@ -53,7 +53,6 @@ export function VitePluginUniProject(
     enforce: 'pre',
     transform(code: string, id: string) {
       if (
-        isBuild ||
         !projectPrivateConfig ||
         !/\.n?vue$/.test(id) ||
         !code.includes('</project-private>')
