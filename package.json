@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-uni-wx-project",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate a plug-in based on the project.private.config.json file of the WeChat mini-program of the uni-app project",
   "author": "Asins",
   "license": "MIT",
